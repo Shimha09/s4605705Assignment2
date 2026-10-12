@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -26,8 +28,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
@@ -52,6 +54,10 @@ dependencies {
 
     // RecyclerView - Day 6
     implementation("androidx.recyclerview:recyclerview:1.4.0")
+
+    // Hilt Dependency Injection - Day 7
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // Existing tests
     testImplementation(libs.junit)
