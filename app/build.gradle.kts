@@ -32,11 +32,28 @@ android {
 }
 
 dependencies {
+
+    // Existing Android dependencies
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
+
+    // Retrofit - Day 5
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    // Navigation Component - Day 4
+    implementation("androidx.navigation:navigation-fragment:2.7.7")
+    implementation("androidx.navigation:navigation-ui:2.7.7")
+
+    // RecyclerView - Day 6
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+
+    // Existing tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
