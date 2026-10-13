@@ -61,6 +61,11 @@ dependencies {
 
     // Existing tests
     testImplementation(libs.junit)
+
+   // Unit Testing - Day 8
+    testImplementation("io.mockk:mockk:1.13.12")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1")
+
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 }
