@@ -64,7 +64,7 @@ class DashboardViewModelTest {
                 entities = listOf(entity),
                 entityTotal = 1
             )
-            
+
 
             coEvery {
                 repository.getDashboard("architecture")
