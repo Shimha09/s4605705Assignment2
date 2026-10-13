@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.s4605705assignment2.R
 import com.example.s4605705assignment2.adapter.ArchitectureAdapter
@@ -45,8 +46,23 @@ class DashboardFragment : Fragment() {
         val recyclerView =
             view.findViewById<RecyclerView>(R.id.recyclerView)
 
-        adapter = ArchitectureAdapter { _ ->
-            // Details screen navigation will be added next.
+        adapter = ArchitectureAdapter { entity ->
+
+            val bundle = Bundle().apply {
+
+                putString("name", entity.name)
+                putString("architect", entity.architect)
+                putString("location", entity.location)
+                putInt("yearCompleted", entity.yearCompleted)
+                putString("style", entity.style)
+                putInt("height", entity.height)
+                putString("description", entity.description)
+            }
+
+            findNavController().navigate(
+                R.id.action_dashboardFragment_to_detailsFragment,
+                bundle
+            )
         }
 
         recyclerView.adapter = adapter
